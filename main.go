@@ -38,13 +38,13 @@ var (
 	port int
 	// Random animals cribbed from Google Drive's "Anonymous [Animal]" notifications
 	animals = []string{
-		"alligator", "anteater", "armadillo", "auroch", "axolotl", "badger", "bat", "beaver", "buffalo",
-		"camel", "chameleon", "cheetah", "chipmunk", "chinchilla", "chupacabra", "cormorant", "coyote",
-		"crow", "dingo", "dinosaur", "dolphin", "duck", "elephant", "ferret", "fox", "frog", "giraffe",
-		"gopher", "grizzly", "hedgehog", "hippo", "hyena", "jackal", "ibex", "ifrit", "iguana", "koala",
-		"kraken", "lemur", "leopard", "liger", "llama", "manatee", "mink", "monkey", "narwhal", "nyan cat",
-		"orangutan", "otter", "panda", "penguin", "platypus", "python", "pumpkin", "quagga", "rabbit", "raccoon",
-		"rhino", "sheep", "shrew", "skunk", "slow loris", "squirrel", "turtle", "walrus", "wolf", "wolverine", "wombat",
+		"Alligator", "Anteater", "Armadillo", "Auroch", "Axolotl", "Badger", "Bat", "Beaver", "Buffalo",
+		"Camel", "Chameleon", "Cheetah", "Chipmunk", "Chinchilla", "Chupacabra", "Cormorant", "Coyote",
+		"Crow", "Dingo", "Dinosaur", "Dolphin", "Duck", "Elephant", "Ferret", "Fox", "Frog", "Giraffe",
+		"Gopher", "Grizzly", "Hedgehog", "Hippo", "Hyena", "Jackal", "Ibex", "Ifrit", "Iguana", "Koala",
+		"Kraken", "Lemur", "Leopard", "Liger", "Llama", "Manatee", "Mink", "Monkey", "Narwhal", "Nyan Cat",
+		"Orangutan", "Otter", "Panda", "Penguin", "Platypus", "Python", "Pumpkin", "Quagga", "Rabbit", "Raccoon",
+		"Rhino", "Sheep", "Shrew", "Skunk", "Slow Loris", "Squirrel", "Turtle", "Walrus", "Wolf", "Wolverine", "Wombat",
 	}
 	// Username must be first.
 	payloadExp = regexp.MustCompile(`([@#][^\s]+):?(.*)`)
@@ -86,7 +86,7 @@ func sendAnonymousMessage(username, message string) error {
 	payload, err := json.Marshal(slackMsg{
 		Text:     message,
 		Channel:  username,
-		Username: fmt.Sprintf("an anonymous %s", animals[rand.Intn(len(animals))]),
+		Username: fmt.Sprintf("Santa %s", animals[rand.Intn(len(animals))]),
 	})
 	if err != nil {
 		return err
